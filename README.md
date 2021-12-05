@@ -16,3 +16,6 @@ While testing, we only got banned (likely manually) 1 out of 4 servers tested.
 I thought I didn't have to make another update. but i forgor to add auto right click 💀
 - i rember right click 😁
 - Slightly updated "menu"
+
+# Minor updates
+- 1.1.1: Fixed a bug

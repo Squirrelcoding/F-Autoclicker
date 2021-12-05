@@ -25,7 +25,7 @@ fn get_rands(n: &i32) -> u64 {
 fn main() { 
     //Menu
     println!("F AUTO-CLICKER");
-    println!("The very cool (and not sus) auto clicker");
+    println!("The very cool (and totally not sus) auto clicker");
     println!("Left Control + Fast clicking (left and right) = really fast clicking");
     println!("Close the program or Ctrl + Q to quit");
     println!("================================================================================");
@@ -49,8 +49,8 @@ fn main() {
             let random = rand::thread_rng().gen_range(1..10); //Gets random number
             let time_between_clicks = get_rands(&random);
             thread::sleep(Duration::from_millis(time_between_clicks)); //Interval
-            LeftButton.press();
-            LeftButton.release();
+            RightButton.press();
+            RightButton.release();
         }
     });
 
