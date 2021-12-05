@@ -25,13 +25,27 @@ fn get_rands(n: &i32) -> u64 {
 fn main() { 
     //Menu
     println!("F AUTO-CLICKER");
-    println!("Left Control + Fast clicking = really fast clicking");
+    println!("The very cool (and not sus) auto clicker");
+    println!("Left Control + Fast clicking (left and right) = really fast clicking");
     println!("Close the program or Ctrl + Q to quit");
-
+    println!("================================================================================");
+    println!("https://github.com/Squirrelcoding/F-Autoclicker");
 
     //When the left mouse button is clicked execute the code
     LeftButton.bind( || {
         while LeftButton.is_pressed() && LControlKey.is_pressed() {
+            let random = rand::thread_rng().gen_range(1..10); //Gets random number
+            let time_between_clicks = get_rands(&random);
+            thread::sleep(Duration::from_millis(time_between_clicks)); //Interval
+            LeftButton.press();
+            LeftButton.release();
+        }
+    });
+
+    //When the right mouse button is clicked execute the code
+    //i forgor to add right button in version 1.0 💀
+    RightButton.bind( || {
+        while RightButton.is_pressed() && LControlKey.is_pressed() {
             let random = rand::thread_rng().gen_range(1..10); //Gets random number
             let time_between_clicks = get_rands(&random);
             thread::sleep(Duration::from_millis(time_between_clicks)); //Interval
